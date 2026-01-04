@@ -56,6 +56,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1-mesa-dri \
     libegl1 \
     libqt5x11extras5 \
+    libxkbcommon-x11-0 \
+    libxcb-xinerama0 \
     mesa-utils \
     && rm -rf /var/lib/apt/lists/*
 
