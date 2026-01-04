@@ -1,0 +1,15 @@
+# USB Camera Node Parameters
+usb_cam:
+  ros__parameters:
+    video_device: "/dev/video0"
+    image_width: 640
+    image_height: 480
+    framerate: 30.0
+    pixel_format: "yuyv"          # Common formats: yuyv, mjpeg, rgb8
+    camera_name: "camera"
+    camera_frame_id: "camera_optical_frame"
+    io_method: "mmap"
+    autofocus: true
+    autoexposure: true
+    auto_white_balance: true
+

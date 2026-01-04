@@ -1,0 +1,18 @@
+# YOLO11 Detector Node Parameters
+yolo_detector:
+  ros__parameters:
+    # Model configuration
+    model: "/workspace/models/yolo11n.pt"  # Model: yolo11n.pt (nano), yolo11s.pt (small), yolo11m.pt (medium), yolo11l.pt (large), yolo11x.pt (xlarge)
+    confidence_threshold: 0.5     # Minimum confidence score for detections (0.0-1.0)
+    device: "cuda:0"              # GPU device ("cuda:0" for first GPU, "cpu" for CPU-only)
+    imgsz: 320                    # Inference size (lower uses less GPU memory; 320 is good for Jetson)
+    half: true                    # Use FP16 on CUDA to reduce memory usage
+
+    # Topic configuration
+    input_topic: "/camera/image_raw"      # Input image topic (sensor_msgs/Image)
+    output_topic: "/detections"           # Output detections topic (vision_msgs/Detection2DArray)
+    image_topic: "/image_annotated"       # Annotated image output topic (sensor_msgs/Image)
+
+    # Output options
+    publish_annotated: true       # Whether to publish annotated images with bounding boxes
+
